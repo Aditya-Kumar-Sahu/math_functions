@@ -33,7 +33,7 @@ class Gaussian:
         try:
             for i in range(self.m):
                 for j in range(self.n):
-                    self.matrix[i][j]=int(input("Enter {:d}-{:d}th element: ".format(i+1, j+1)))
+                    self.matrix[i][j]=float(input("Enter {:d}-{:d}th element: ".format(i+1, j+1)))
         except:
             print("Please enter correct values")
             print()
