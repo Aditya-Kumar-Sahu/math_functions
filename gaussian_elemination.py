@@ -40,12 +40,32 @@ class Gaussian:
             self.input_matrix()
 
     def display_marix(self):
+        """
+        A utility function to display matrix
+        ----------
+        Return Type: None
+        """
         print()
         for row in self.matrix:
             print(row)
+
+    def divide(self, row, num):
+        """
+        function to divide an row by given number
+        ----------
+        Parameters-
+        row: the row of matrix
+        num: number to divide with
+        ----------
+        Return Type: None
+        """
+        for j in range(self.n):
+            self.matrix[row-1][j]=self.matrix[row-1][j]/num
 
 if __name__ == '__main__':
     matrix=Gaussian()
     matrix.create_matrix()
     matrix.input_matrix()
+    matrix.display_marix()
+    matrix.divide(2,2)
     matrix.display_marix()
