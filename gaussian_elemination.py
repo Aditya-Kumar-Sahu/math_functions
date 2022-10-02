@@ -96,12 +96,27 @@ class Gaussian:
         for j in range(self.n):
             self.matrix[row1-1][j]=self.matrix[row1-1][j] + self.matrix[row2-1][j]*coeff
 
+    def row_echlon(self):
+        """
+        function for converting matrix to its row echelon form
+        ---------
+        Return Type: None
+        """
+        for i in range(self.m):
+            self.type1(i+1)
+            for k in range(i+1, self.m):
+                coeff=0
+                for j in range(self.n):
+                    if self.matrix[k][j]!=0:
+                        coeff=self.matrix[k][j]
+                        break
+                if coeff!=0:
+                    self.type2(k+1, i+1, -coeff)
+
 if __name__ == '__main__':
     matrix=Gaussian()
     matrix.create_matrix()
     matrix.input_matrix()
     matrix.display_marix()
-    matrix.type1(2)
-    matrix.display_marix()
-    matrix.type2(2, 1, -1)
+    matrix.row_echlon()
     matrix.display_marix()
