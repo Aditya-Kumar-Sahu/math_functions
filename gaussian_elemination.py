@@ -46,8 +46,14 @@ class Gaussian:
         Return Type: None
         """
         print()
-        for row in self.matrix:
-            print(row)
+        print("--" + " "*(7*self.n-2) + "--")
+        for i in range(self.m):
+            print("|", end="")
+            for j in range(self.n):
+                print(" {:^5s} ".format(str(round(self.matrix[i][j], 2))), end="")
+            print("|")
+        print("--" + " "*(7*self.n-2) + "--")
+
 
     def divide(self, row, num):
         """
@@ -67,5 +73,5 @@ if __name__ == '__main__':
     matrix.create_matrix()
     matrix.input_matrix()
     matrix.display_marix()
-    matrix.divide(2,2)
+    matrix.divide(2,7)
     matrix.display_marix()
