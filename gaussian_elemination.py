@@ -1,5 +1,5 @@
 """
-Program to perform Gaussian Elemination on given "m x n" matrix/verter.
+Program to perform Gaussian Elemination on given "m x n" matrix/verter and convert in into its row echelon form.
 """
 class Gaussian:
     def __init__(self):
@@ -117,6 +117,8 @@ if __name__ == '__main__':
     matrix=Gaussian()
     matrix.create_matrix()
     matrix.input_matrix()
+    print("Given matrix:-")
     matrix.display_marix()
     matrix.row_echlon()
+    print("Matrix in row ehelon form:-")
     matrix.display_marix()
