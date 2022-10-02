@@ -68,10 +68,24 @@ class Gaussian:
         for j in range(self.n):
             self.matrix[row-1][j]=self.matrix[row-1][j]/num
 
+    def type1(self, row):
+        """
+        row operation type 1
+        ----------
+        Parameters:-
+        row: row in which row operation is to be applied
+        ----------
+        Return Type: None
+        """
+        for j in range(self.n):
+            if(self.matrix[row-1][j]!=0):
+                self.divide(row, self.matrix[row-1][j])
+                break
+
 if __name__ == '__main__':
     matrix=Gaussian()
     matrix.create_matrix()
     matrix.input_matrix()
     matrix.display_marix()
-    matrix.divide(2,7)
+    matrix.type1(2)
     matrix.display_marix()
