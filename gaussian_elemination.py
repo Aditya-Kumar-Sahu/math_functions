@@ -82,10 +82,26 @@ class Gaussian:
                 self.divide(row, self.matrix[row-1][j])
                 break
 
+    def type2(self, row1, row2, coeff):
+        """
+        type 2 row operation
+        ----------
+        Paramaters:-
+        row1: row in which operation is being applied
+        row2: row of which multiple is used
+        coeff: float value coeficient for multiple of row2
+        ----------
+        Return Type: None
+        """
+        for j in range(self.n):
+            self.matrix[row1-1][j]=self.matrix[row1-1][j] + self.matrix[row2-1][j]*coeff
+
 if __name__ == '__main__':
     matrix=Gaussian()
     matrix.create_matrix()
     matrix.input_matrix()
     matrix.display_marix()
     matrix.type1(2)
+    matrix.display_marix()
+    matrix.type2(2, 1, -1)
     matrix.display_marix()
