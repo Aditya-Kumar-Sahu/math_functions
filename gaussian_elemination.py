@@ -38,6 +38,8 @@ class Gaussian:
             print("Please enter correct values")
             print()
             self.input_matrix()
+        finally:
+            print()
 
     def display_marix(self):
         """
@@ -45,7 +47,6 @@ class Gaussian:
         ----------
         Return Type: None
         """
-        print()
         print("--" + " "*(7*self.n-2) + "--")
         for i in range(self.m):
             print("|", end="")
@@ -53,6 +54,7 @@ class Gaussian:
                 print(" {:^5s} ".format(str(round(self.matrix[i][j], 2))), end="")
             print("|")
         print("--" + " "*(7*self.n-2) + "--")
+        print()
 
 
     def divide(self, row, num):
